@@ -1,5 +1,6 @@
-FROM ubuntu:20.04
-
-RUN apt-get update
-RUN apt-get install -y vim
-
+FROM python:3.8
+ENV PYTHONUNBUFFERED=1
+WORKDIR /home/jim/Tjs/twitch
+COPY requirements.txt /home/jim/Tjs/twitch
+RUN pip install -r requirements.txt
+COPY . home/jim/Tjs/twitch
